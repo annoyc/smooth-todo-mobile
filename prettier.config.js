@@ -1,6 +1,6 @@
 const options = {
   arrowParens: 'avoid',
-  singleQuoto: true,
+  singleQuote: true,
   backetSpacing: true,
   endOfLine: 'lf',
   semi: false,
