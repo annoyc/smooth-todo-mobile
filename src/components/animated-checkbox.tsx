@@ -21,13 +21,14 @@ const AnimatedStoke = Animated.createAnimatedComponent(Path)
 
 interface Props {
   checked?: boolean
+  hightlightColor: string
+  boxOutlineColor: string
+  checkmarkColor: string
+  onPress?: () => void
 }
 
 const AnimatedCheckbox = (props: Props) => {
-  const { checked } = props
-  const checkmarkColor = '#000000'
-  const hightlightColor = '#ff0000'
-  const boxOutlineColor = '#000000'
+  const { checked, checkmarkColor, hightlightColor, boxOutlineColor } = props
   const progress = useSharedValue(0)
 
   useEffect(() => {
@@ -81,7 +82,7 @@ const AnimatedCheckbox = (props: Props) => {
       />
       <G clipPath="url(#clipPath)">
         <AnimatedStoke
-          progress={progress}
+          // progress={progress}
           d={checkMarkPath}
           stroke={checkmarkColor}
           strokeWidth={10}
