@@ -1,10 +1,10 @@
-import AppContainer from "./src/components/app-container"
-import Main from "./src/screens/main"
+import AppContainer from './src/components/app-container'
+import Navigator from './src/index'
 
 export default function App() {
   return (
     <AppContainer>
-      <Main />
+      <Navigator />
     </AppContainer>
   )
 }
