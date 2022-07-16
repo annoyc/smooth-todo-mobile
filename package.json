@@ -10,6 +10,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/webpack-config": "^0.16.26",
     "@react-navigation/drawer": "6.1.8",
     "@react-navigation/native": "^6.0.11",
     "@types/shortid": "^0.0.29",
