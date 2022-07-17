@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
-import { Center, VStack } from 'native-base'
-// import { AntDesign } from '@expo/vector-icons'
+import { Center, VStack, Fab, Icon, useColorModeValue } from 'native-base'
+import { AntDesign } from '@expo/vector-icons'
 import ThemeToggle from '../components/theme-toggle'
 import TaskList from '../components/task-list'
 import shortid from 'shortid'
@@ -71,6 +71,26 @@ export default function MainScreen() {
         />
         <ThemeToggle />
       </VStack>
+      <Fab
+        position="absolute"
+        renderInPortal={false}
+        size="sm"
+        icon={<Icon color="white" as={<AntDesign name="plus" />} size="sm" />}
+        colorScheme={useColorModeValue('blue', 'darkBlue')}
+        bg={useColorModeValue('blue.500', 'blue.400')}
+        onPress={() => {
+          const id = shortid.generate()
+          setData([
+            {
+              id,
+              subject: '',
+              done: false
+            },
+            ...data
+          ])
+          setEditingItemId(id)
+        }}
+      />
     </Center>
   )
 }
